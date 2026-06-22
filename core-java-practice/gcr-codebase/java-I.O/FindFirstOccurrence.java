@@ -22,14 +22,14 @@ public class FindFirstOccurrence {
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.print("Enter main string: ");
+            String haystack = scanner.nextLine();
 
-        System.out.print("Enter main string: ");
-        String haystack = scanner.nextLine();
+            System.out.print("Enter search string: ");
+            String needle = scanner.nextLine();
 
-        System.out.print("Enter search string: ");
-        String needle = scanner.nextLine();
-
-        System.out.println("Index = " + strStr(haystack, needle));
+            System.out.println("Index = " + strStr(haystack, needle));
+        }
     }
 }

@@ -31,38 +31,39 @@ class Employee implements Serializable {
 
 public class EmployeeSerializationDemo {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
         String fileName = "employee.ser";
 
-        System.out.print("Enter employee id: ");
-        int employeeId = scanner.nextInt();
-        scanner.nextLine();
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.print("Enter employee id: ");
+            int employeeId = scanner.nextInt();
+            scanner.nextLine();
 
-        System.out.print("Enter name: ");
-        String name = scanner.nextLine();
+            System.out.print("Enter name: ");
+            String name = scanner.nextLine();
 
-        System.out.print("Enter department: ");
-        String department = scanner.nextLine();
+            System.out.print("Enter department: ");
+            String department = scanner.nextLine();
 
-        System.out.print("Enter salary: ");
-        double salary = scanner.nextDouble();
+            System.out.print("Enter salary: ");
+            double salary = scanner.nextDouble();
 
-        Employee employee = new Employee(employeeId, name, department, salary);
+            Employee employee = new Employee(employeeId, name, department, salary);
 
-        try (ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream(fileName))) {
-            output.writeObject(employee);
-            System.out.println("Employee object serialized");
-        } catch (IOException e) {
-            System.out.println("Error serializing employee object");
-        }
+            try (ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream(fileName))) {
+                output.writeObject(employee);
+                System.out.println("Employee object serialized");
+            } catch (IOException e) {
+                System.out.println("Error serializing employee object");
+            }
 
-        try (ObjectInputStream input = new ObjectInputStream(new FileInputStream(fileName))) {
-            Employee recoveredEmployee = (Employee) input.readObject();
+            try (ObjectInputStream input = new ObjectInputStream(new FileInputStream(fileName))) {
+                Employee recoveredEmployee = (Employee) input.readObject();
 
-            System.out.println("Recovered employee information:");
-            recoveredEmployee.display();
-        } catch (IOException | ClassNotFoundException e) {
-            System.out.println("Error recovering employee object");
+                System.out.println("Recovered employee information:");
+                recoveredEmployee.display();
+            } catch (IOException | ClassNotFoundException e) {
+                System.out.println("Error recovering employee object");
+            }
         }
     }
 }

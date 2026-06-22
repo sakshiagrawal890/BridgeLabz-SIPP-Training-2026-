@@ -21,22 +21,22 @@ public class EmployeeSkillAssignment {
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.print("Enter number of employees: ");
+            int n = scanner.nextInt();
 
-        System.out.print("Enter number of employees: ");
-        int n = scanner.nextInt();
+            int[] skills = new int[n];
+            System.out.println("Enter employee skill scores:");
 
-        int[] skills = new int[n];
-        System.out.println("Enter employee skill scores:");
+            for (int i = 0; i < n; i++) {
+                skills[i] = scanner.nextInt();
+            }
 
-        for (int i = 0; i < n; i++) {
-            skills[i] = scanner.nextInt();
+            System.out.print("Enter target skill score: ");
+            int target = scanner.nextInt();
+
+            System.out.println("Possible project teams:");
+            findTeams(skills, target, 0, new ArrayList<>());
         }
-
-        System.out.print("Enter target skill score: ");
-        int target = scanner.nextInt();
-
-        System.out.println("Possible project teams:");
-        findTeams(skills, target, 0, new ArrayList<>());
     }
 }
