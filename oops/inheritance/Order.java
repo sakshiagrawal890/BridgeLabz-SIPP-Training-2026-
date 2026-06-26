@@ -1,3 +1,5 @@
+package oops.inheritance;
+
 public class Order {
     private String orderId;
     private String orderDate;

@@ -1,3 +1,5 @@
+package oops.inheritance;
+
 public class PetrolVehicle extends Vehicle implements Refuelable {
     private int fuelCapacity;
 

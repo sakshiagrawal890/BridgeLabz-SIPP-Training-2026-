@@ -1,3 +1,5 @@
+package oops.inheritance;
+
 public class GradStudent extends Student {
     private String thesis;
 

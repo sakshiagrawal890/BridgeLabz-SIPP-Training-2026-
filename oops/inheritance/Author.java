@@ -1,3 +1,5 @@
+package oops.inheritance;
+
 public class Author extends Book {
     private String name;
     private String bio;

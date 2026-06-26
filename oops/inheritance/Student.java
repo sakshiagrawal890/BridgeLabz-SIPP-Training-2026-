@@ -1,3 +1,5 @@
+package oops.inheritance;
+
 public class Student extends Person {
     private final String studentId;
     private double gpa;

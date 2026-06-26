@@ -1,3 +1,5 @@
+package oops.inheritance;
+
 public class Vehicle {
     private String model;
     private int maxSpeed;

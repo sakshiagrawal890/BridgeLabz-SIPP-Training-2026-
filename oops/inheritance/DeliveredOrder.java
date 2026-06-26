@@ -1,3 +1,5 @@
+package oops.inheritance;
+
 public class DeliveredOrder extends ShippedOrder {
     private String deliveryDate;
 

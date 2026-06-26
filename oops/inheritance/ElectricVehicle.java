@@ -1,3 +1,5 @@
+package oops.inheritance;
+
 public class ElectricVehicle extends Vehicle {
     private int batteryCapacity;
 

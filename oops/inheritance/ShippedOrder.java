@@ -1,3 +1,5 @@
+package oops.inheritance;
+
 public class ShippedOrder extends Order {
     private String trackingNumber;
 
