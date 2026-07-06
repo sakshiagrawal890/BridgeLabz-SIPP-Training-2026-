@@ -13,7 +13,7 @@ public class NullPointerExceptionDemo {
         
         try {
             System.out.println("Calling length() method on null string...");
-            int length = text.length(); // This will throw NullPointerException
+            int length = text.length(); 
             System.out.println("String length: " + length);
         } catch (NullPointerException e) {
             System.out.println("❌ NullPointerException CAUGHT!");
@@ -84,8 +84,10 @@ public class NullPointerExceptionDemo {
                         break;
                 }
             } catch (NullPointerException e) {
-                System.out.println("  ✓ Caught NullPointerException when calling " + method);
+                System.out.println("  ✓ Caught " + e.getClass().getSimpleName() + " when calling " + method);
+                System.out.println("    Message: " + (e.getMessage() != null ? e.getMessage() : "No message"));
             }
+
         }
     }
     
@@ -124,8 +126,10 @@ public class NullPointerExceptionDemo {
             System.out.println("Check if variable is null before using it!");
             
         } finally {
-            scanner.close();
+            // Do NOT close Scanner(System.in) for demo programs; closing can affect further input.
+            // scanner.close();
         }
+
     }
     
     public static void main(String[] args) {
