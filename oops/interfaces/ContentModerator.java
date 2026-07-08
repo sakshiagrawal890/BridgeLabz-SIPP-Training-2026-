@@ -1,4 +1,4 @@
-package oops.interfaces;
+package interfaces;
 
 /**
  * Problem 4: AI-Based Content Moderation Platform
